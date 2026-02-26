@@ -1,0 +1,48 @@
+baseURL = 'http://rukeba.com'
+languageCode = 'ru-RU'
+defaultContentLanguage = 'ru'
+title = 'rukeba.com'
+theme = 'rukeba'
+
+[params]
+  description = 'Блог, песенник и ссылки, которые ведёт rukeba.'
+  dateFormat = '2 Jan 2006, 15:04'
+  cdnUrl = 'https://rukeba.com'
+  logo = 'https://rukeba.com/assets/img/r.png'
+  googleAnalytics = 'UA-1638627-8'
+
+[permalinks]
+  'by-the-way' = '/:section/:slug/'
+  'songbook' = '/:section/:slug/'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    codeFences = false
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+  taxonomy = ['HTML']
+  term = ['HTML']
+
+[outputFormats.RSS]
+  mediatype = 'application/rss+xml'
+  baseName = 'feed/index'
+  path = ''
+
+enableRobotsTXT = true
+disableKinds = []
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+
+summaryLength = 70

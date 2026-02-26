@@ -1,0 +1,17 @@
+name = "Rukeba"
+license = "MIT"
+licenselink = "https://github.com/rukeba/rukeba.github.io/blob/main/LICENSE"
+description = "A clean, minimal theme for blogs with multiple content sections"
+homepage = "https://github.com/rukeba/rukeba.github.io"
+tags = ["blog", "minimal", "responsive", "bootstrap"]
+features = ["pagination", "tags", "multilingual"]
+min_version = "0.87.0"
+
+[author]
+  name = "Ruslan Keba"
+  homepage = "https://rukeba.com"
+
+[original]
+  author = "Ruslan Keba"
+  homepage = "https://rukeba.com"
+  repo = "https://github.com/rukeba/rukeba.github.io"

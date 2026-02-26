@@ -1,0 +1,30 @@
+{{- define "main" }}
+<div class="taxonomy-page">
+    <h1>Тег: {{ .Title }}</h1>
+    
+    {{- $section := .Data.Singular }}
+    {{- range .Pages }}
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{- .Date.Format .Site.Params.dateFormat }}
+                </time>
+                {{- if .Params.tags }}
+                    <span class="post-tags">
+                        {{- range .Params.tags }}
+                            <a href="{{ (printf "/%s/%s/" $.Section (. | urlize)) | relURL }}" class="tag">{{ . }}</a>
+                        {{- end }}
+                    </span>
+                {{- end }}
+            </div>
+            <div class="post-excerpt">
+                {{- .Summary }}
+            </div>
+            <a href="{{ .RelPermalink }}" class="read-more">Читать дальше →</a>
+        </div>
+    {{- end }}
+</div>
+{{- end }}

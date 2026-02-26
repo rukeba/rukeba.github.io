@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:title" content="Dev - rukeba.com">
+<meta property="og:description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tags/dev/">
+<meta property="og:image" content="https://rukeba.com/assets/img/r.png">
+
+<title>
+    Dev - rukeba.com
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/assets/css/rukeba.css">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="rukeba.com" href="http://localhost:1313/feed/">
+
+</head>
+<body>
+    <div class="container"><header>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="brand">
+                <a href="http://localhost:1313/" title="rukeba.com">
+                        <img src="https://rukeba.com/assets/img/r.png" alt="rukeba.com" style="height: 40px;">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="row">
+        <div class="col-md-12 nav">
+            <span>
+                <a href="http://localhost:1313/">Главная</a>
+            </span>
+            <span>
+                <a href="/by-the-way/">По жизни</a>
+            </span>
+            <span>
+                <a href="/songbook/">Песенник</a>
+            </span>
+        </div>
+    </nav>
+</header>
+
+        <main id="content">
+<div class="taxonomy-page">
+    <h1>Тег: Dev</h1>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/2016/">Итоги 2016-го</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2017-01-02T22:21:00&#43;03:00">2 Jan 2017, 22:21
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/life/" class="tag">life</a>
+                            <a href="/tags/music/" class="tag">music</a>
+                            <a href="/tags/dev/" class="tag">dev</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><h3 id="на-работе">На работе</h3>
+<p>Уже больше двух лет я работаю в команде, которая развивает, внедряет и поддерживает e-commerce движок. Этот год по-моему стал переломным. Проект начал выбираться из sql-болота, в которое его долгое время погружали. Держать самые важные функции в хранимых процедурах очень не удобно: нет версионности, тяжело отлаживать, трудно синхронизировать и деплоить. Медленно, но уверенно наш критический код передвигается их хранимых sql-процедур в c#-код.</p>
+<p>Мы написали огромное количество тестов: юнит-тесты на бекенде, функциональные тесты на фронтенде (на Selenium). Появилось больше веры в наш код. Теперь деплой на продакшн-серверы — это не стресс и скрещивание пальцев, а обычный процесс, который мы можем делать несколько раз в день.</p>
+            </div>
+            <a href="/by-the-way/2016/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/disable-http-caching/">Запрет кеширования по HTTP</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2013-04-20T00:30:00&#43;03:00">20 Apr 2013, 00:30
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/dev/" class="tag">dev</a>
+                            <a href="/tags/http/" class="tag">http</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Забываю я эту магическую последовательность в Cache-Control, которая запрещает браузеру кешировать ответы. Записываю на память:</p>
+<pre><code>Cache-Control: no-cache,no-store,must-revalidate,max-age=0
+</code></pre>
+<p>Ещё для верности можно добавлять:</p>
+<pre><code>Pragma: no-cache
+Expires: 0
+</code></pre>
+<p>А ещё браузеры не кешируют POST-запросы.</p>
+            </div>
+            <a href="/by-the-way/disable-http-caching/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/beer-ware-license/">THE BEER-WARE LICENSE</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-04-08T11:00:00&#43;03:00">8 Apr 2008, 11:00
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/dev/" class="tag">dev</a>
+                            <a href="/tags/beer/" class="tag">beer</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Рассматривая исходники Apache, нахожу занятные лицензии и комментарии. Например, apr_md5.c:</p>
+<pre><code>/*
+ * The apr_md5_encode() routine uses much code obtained from the FreeBSD 3.0
+ * MD5 crypt() function, which is licenced as follows:
+ * ----------------------------------------------------------------------------
+ * &quot;THE BEER-WARE LICENSE&quot; (Revision 42):
+ * &lt;phk@login.dknet.dk&gt; wrote this file.  As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
+ * ----------------------------------------------------------------------------
+ */
+</code></pre>
+            </div>
+            <a href="/by-the-way/beer-ware-license/" class="read-more">Читать дальше →</a>
+        </div>
+</div>
+        </main><footer>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                    © 2026 rukeba.com
+            </p>
+            <p class="links-no-decoration">
+                <a href="/feed/" title="RSS Feed">
+                    <i class="fa fa-rss"></i> RSS
+                </a>
+            </p>
+            <p class="small" style="color: #999; margin-top: 1em;">
+                Powered by <a href="https://gohugo.io/">Hugo</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.4.0/lazyload.js"></script>
+
+
+<script src="/assets/js/rukeba.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1638627-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-1638627-8');
+</script>
+
+</body>
+</html>

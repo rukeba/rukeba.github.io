@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:title" content="Nginx - rukeba.com">
+<meta property="og:description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tags/nginx/">
+<meta property="og:image" content="https://rukeba.com/assets/img/r.png">
+
+<title>
+    Nginx - rukeba.com
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/assets/css/rukeba.css">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="rukeba.com" href="http://localhost:1313/feed/">
+
+</head>
+<body>
+    <div class="container"><header>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="brand">
+                <a href="http://localhost:1313/" title="rukeba.com">
+                        <img src="https://rukeba.com/assets/img/r.png" alt="rukeba.com" style="height: 40px;">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="row">
+        <div class="col-md-12 nav">
+            <span>
+                <a href="http://localhost:1313/">Главная</a>
+            </span>
+            <span>
+                <a href="/by-the-way/">По жизни</a>
+            </span>
+            <span>
+                <a href="/songbook/">Песенник</a>
+            </span>
+        </div>
+    </nav>
+</header>
+
+        <main id="content">
+<div class="taxonomy-page">
+    <h1>Тег: Nginx</h1>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/redirekt-fida-na-feedburner-iz-nginx/">Редирект фида на FeedBurner из nginx</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-11-11T10:42:00&#43;03:00">11 Nov 2008, 10:42
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/howto/" class="tag">howto</a>
+                            <a href="/tags/nginx/" class="tag">nginx</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Что бы редиректить фиды (rss, atom) со своего сайта на FeedBurner, достаточно добавить в конфигурацию сайта такое:</p>
+<pre><code># redirect feed requests to feedburner, unless its the feedburner agent
+if ($http_user_agent !~* FeedBurner|FeedValidator) {
+    rewrite ^/feed.rss$ http://feeds.feedburner.com/your-feed-name?format=xml;
+}
+</code></pre>
+<p>У меня на блоге именно так и работает — <a href="/blog/feed/latest/">мой фид</a>. Всё просто и я опять радуюсь!</p>
+            </div>
+            <a href="/by-the-way/redirekt-fida-na-feedburner-iz-nginx/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/pereehal-na-nginx/">Переехал на nginx</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-11-06T11:14:00&#43;03:00">6 Nov 2008, 11:14
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/nginx/" class="tag">nginx</a>
+                            <a href="/tags/web/" class="tag">web</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Перевёл все свои сайты на веб-сервер <a href="http://sysoev.ru/nginx/">nginx</a>. Памяти он кушает ощутимо меньше апача, по настройкам не уступает, отклик стал быстрее по ощущениям и по простым замерам. Джанго-сайты стали работать через fastcgi, что тоже приятно.</p>
+<p>А, и ещё. Движок для <a href="/blog/">этого блога</a> и <a href="/ra/">Спелых Абрикос</a> - то, что <a href="http://code.google.com/p/a1blog/">лежит на гуглокоде</a>. Бета ожидается.</p>
+            </div>
+            <a href="/by-the-way/pereehal-na-nginx/" class="read-more">Читать дальше →</a>
+        </div>
+</div>
+        </main><footer>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                    © 2026 rukeba.com
+            </p>
+            <p class="links-no-decoration">
+                <a href="/feed/" title="RSS Feed">
+                    <i class="fa fa-rss"></i> RSS
+                </a>
+            </p>
+            <p class="small" style="color: #999; margin-top: 1em;">
+                Powered by <a href="https://gohugo.io/">Hugo</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.4.0/lazyload.js"></script>
+
+
+<script src="/assets/js/rukeba.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1638627-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-1638627-8');
+</script>
+
+</body>
+</html>

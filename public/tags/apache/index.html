@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:title" content="Apache - rukeba.com">
+<meta property="og:description" content="Блог, песенник и ссылки, которые ведёт rukeba.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:1313/tags/apache/">
+<meta property="og:image" content="https://rukeba.com/assets/img/r.png">
+
+<title>
+    Apache - rukeba.com
+</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/assets/css/rukeba.css">
+
+
+
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="rukeba.com" href="http://localhost:1313/feed/">
+
+</head>
+<body>
+    <div class="container"><header>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="brand">
+                <a href="http://localhost:1313/" title="rukeba.com">
+                        <img src="https://rukeba.com/assets/img/r.png" alt="rukeba.com" style="height: 40px;">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="row">
+        <div class="col-md-12 nav">
+            <span>
+                <a href="http://localhost:1313/">Главная</a>
+            </span>
+            <span>
+                <a href="/by-the-way/">По жизни</a>
+            </span>
+            <span>
+                <a href="/songbook/">Песенник</a>
+            </span>
+        </div>
+    </nav>
+</header>
+
+        <main id="content">
+<div class="taxonomy-page">
+    <h1>Тег: Apache</h1>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/podsvetka-sintaksisa-apache/">Подсветка синтаксиса Apache</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-12-27T14:27:00&#43;03:00">27 Dec 2008, 14:27
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                            <a href="/tags/done/" class="tag">done</a>
+                            <a href="/tags/web/" class="tag">web</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Появилась у меня необходимость на страницах <a href="http://helicontech.blogspot.com">блога HeliconTech</a>
+синтаксически подсвечивать конфигурационные файлы Apache (httpd.conf и .htaccess). Первым делом
+я пошёл на сайт Ивана Сагалаева, но оказалось, что его замечательный
+<a href="http://softwaremaniacs.org/soft/highlight/">highlight.js</a> подсвечивать конфигурацию Apache не умеет.
+Но также выяснилось, что написать новую подсветку синтаксиса довольно просто. С сайта документации Apache
+я получил html-страницу, на которой были все (*почти все :) его директивы. После некоторого
+шаманства с регулярными выражениями из этого html-файла я получил список всех директив Apache
+в простом текстовом файле. Дальше, немного потрудившись, получилось и само описание синтаксиса.</p>
+            </div>
+            <a href="/by-the-way/podsvetka-sintaksisa-apache/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/rewritecond-i-server_port/">RewriteCond и %{SERVER_PORT}</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-09-08T19:27:00&#43;03:00">8 Sep 2008, 19:27
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                            <a href="/tags/iis/" class="tag">iis</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Нашёл в apache интересную и неочевидную особенность. Имеем конфиг:</p>
+<pre><code>ServerName company.com
+Listen 8080
+Listen 8081
+...
+RewriteCond %{SERVER_PORT} 8080
+RewriteRule .* bar.html
+</code></pre>
+<p>Правило RewriteRule никогда не отработает! Условие в RewriteCond будет всегда ложно.  %{SERVER_PORT}, как видно из логов mod_rewrite, всегда возвращает 80. Сначала я подумал, что нашёл в apache баг. Но посмотрев исходники, понял, что багрепортером апача мне не быть. Серверная переменная  %{SERVER_PORT} содержит не номер порта, на который пришёл запрос (что в общем вполне логично и ожидаемо), а номер порта из ServerName! Немного исправит положение <code>ServerName company.com:8080</code>. Но как отличать запросы, которые пришли на порт 8081?</p>
+            </div>
+            <a href="/by-the-way/rewritecond-i-server_port/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-9/">apache: аутентификация и авторизация #9: mod_authn_default, mod_authz_default</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-05-28T08:23:00&#43;03:00">28 May 2008, 08:23
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Модуль mod_authn_default является запасным последнем (fallback) модулем в процессе аутентификации.
+Если для запроса нет сконфигурированного модуля аутентифиукации (например, mod_auth_basic с <code>AuthType Basic</code> и далее)
+модуль mod_authn_default просто отклоняет любые аутентификационные данные
+и прекращает обработку запроса со стастусом <code>401 Authorization Required</code>. Такое может случится, если, например,
+mod_auth_basic неавторитарен (<code>AuthBasicAuthoritative Off</code> - об этом следующем посте) и не смог аутентифицировать
+пользователя.</p>
+<p>Модуль mod_authz_default является запасным последнем (fallback) модулем в процессе авторизации.
+Если для запроса не отработал ни один модуль авторизации (например, mod_authz_user с <code>Require user john</code>),
+а такое возможно если в <code>Require</code> были неопознанные требования, например, <code>Require unknown requirement</code>,
+модуль mod_authz_default просто прекращает обработку запроса со стастусом <code>401 Authorization Required</code>.</p>
+            </div>
+            <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-9/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-6/">apache: аутентификация и авторизация #6: mod_authz_host</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-05-13T22:27:00&#43;03:00">13 May 2008, 22:27
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Отдельное место среди всех авторизаторов занимает модуль mod_authz_host. При обработке запроса этот модуль вызывается раньше любых других модулей аутентификации/авторизации и используется для контроля доступа на основании данных о хосте клиента (имя хоста, адрес) и характеристик запроса (через переменные окружения). Этот модуль, пожалуй, наиболее часто используемый в Апаче для контроля доступа.</p>
+<p>Работа модуля определяется директивами: <code>Order</code>, <code>Allow</code>, <code>Deny</code>. Директива <code>Order</code> определяет порядок проверки правил:</p>
+<pre><code>Order allow,deny
+</code></pre>
+<p>значит, что первыми будут проверятся правила allow (т.е. разрешающие), потом - правила deny (запрещающие). Если никаких правил нет - действие по умолчанию - запретить всем. Директива</p>
+            </div>
+            <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-6/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-5/">apache: аутентификация и авторизация #5: mod_authz_user</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-05-13T09:02:00&#43;03:00">13 May 2008, 09:02
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Модуль mod_authz_user обеспечивает авторизацию
+аутентифицированного пользователя. Иначе говоря, пользователю, который успешно
+прошёл проверку имени/пароля (т.е. успешно аутентифицирован), модуль разрешает
+или запрещает доступ к запрашиваемому ресурсу.</p>
+<p>Модуль проверяет значение директивы <code>Require</code>. Строка</p>
+<pre><code>Require valid-user
+</code></pre>
+<p>означает, что модуль будет успешно авторизовать (давать доступ) всем аутентифицированным
+пользователям. Строка</p>
+<pre><code>Require user john tom
+</code></pre>
+<p>означает, что модуль будет успешно авторизовать только пользователей john и tom.</p>
+<p>дальше будет.</p>
+            </div>
+            <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-5/" class="read-more">Читать дальше →</a>
+        </div>
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-2/">apache: аутентификация и авторизация. #2</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="2008-04-24T08:47:00&#43;03:00">24 Apr 2008, 08:47
+                </time>
+                    <span class="post-tags">
+                            <a href="/tags/apache/" class="tag">apache</a>
+                    </span>
+            </div>
+            <div class="post-excerpt"><p>Процесс аутентификации/авторизации происходит в три этапа.</p>
+<p><strong>Получение аутентификационных данных</strong>. На этом этапе работает mod_auth_basic или mod_auth_digest.
+Они читают заголовок запроса Authentication и вытягивают оттуда аутентификационные данные (credentials).
+Для Basic-аутентификации это просто &lsquo;username:password&rsquo; в base64 кодировке. Для Digest-аутентификации это
+md5-дайджест имени пользователя, пароля, authname и других параметров, которые мы позже рассмотрим детально.</p>
+<p><strong>Аутентификация (проверка аутентификационных данных)</strong>. На этом этапе работают модули mod_authn_***,
+которые проверяют аутентификационные данные. Например, модуль mod_authn_file исчет пару username:password
+в текстовом файле. Результат работы этих модулей - аутентифицирован успешно (AUTH_GRANTED), доступ запрещён (AUTH_DENIED)
+или пользователь не найден (AUTH_USER_NOT_FOUND).</p>
+            </div>
+            <a href="/by-the-way/apache-autentifikaciya-i-avtorizaciya-2/" class="read-more">Читать дальше →</a>
+        </div>
+</div>
+        </main><footer>
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                    © 2026 rukeba.com
+            </p>
+            <p class="links-no-decoration">
+                <a href="/feed/" title="RSS Feed">
+                    <i class="fa fa-rss"></i> RSS
+                </a>
+            </p>
+            <p class="small" style="color: #999; margin-top: 1em;">
+                Powered by <a href="https://gohugo.io/">Hugo</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.4.0/lazyload.js"></script>
+
+
+<script src="/assets/js/rukeba.js"></script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1638627-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-1638627-8');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<header>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="brand">
+                <a href="{{ .Site.BaseURL }}" title="{{ .Site.Title }}">
+                    {{- if .Site.Params.logo }}
+                        <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" style="height: 40px;">
+                    {{- else }}
+                        {{ .Site.Title }}
+                    {{- end }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="row">
+        <div class="col-md-12 nav">
+            <span>
+                <a href="{{ .Site.BaseURL }}">Главная</a>
+            </span>
+            <span>
+                <a href="{{ "by-the-way/" | relURL }}">Блог</a>
+            </span>
+            <span>
+                <a href="{{ "songbook/" | relURL }}">Песенник</a>
+            </span>
+            {{- range .Site.Menus.main }}
+            <span>
+                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+            </span>
+            {{- end }}
+        </div>
+    </nav>
+</header>

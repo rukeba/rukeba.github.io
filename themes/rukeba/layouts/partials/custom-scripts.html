@@ -1,0 +1,18 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- LazyLoad for images -->
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.4.0/lazyload.js"></script>
+
+<!-- Custom Site JS -->
+<script src="{{ "assets/js/rukeba.js" | relURL }}"></script>
+
+{{- if .Site.Params.customScripts }}
+<!-- Custom Scripts from site params -->
+<script>
+  {{- .Site.Params.customScripts | safeJS }}
+</script>
+{{- end }}

@@ -1,0 +1,6 @@
+{{- if .Site.Params.customCSS }}
+<!-- Custom CSS from site params -->
+<style>
+  {{- .Site.Params.customCSS | safeCSS }}
+</style>
+{{- end }}

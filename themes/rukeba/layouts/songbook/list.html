@@ -1,0 +1,51 @@
+{{- define "main" }}
+<div class="songbook">
+    <h1>{{ .Title }}</h1>
+    
+    {{- $paginator := .Paginate (first 10 .Pages) }}
+    
+    {{- range $paginator.Pages }}
+        <div class="post-list-item">
+            <h2 class="post-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{- .Date.Format .Site.Params.dateFormat }}
+                </time>
+                {{- if .Params.tags }}
+                    <span class="post-tags">
+                        {{- range .Params.tags }}
+                            <a href="{{ (printf "/songbook/tags/%s/" (. | urlize)) | relURL }}" class="tag">{{ . }}</a>
+                        {{- end }}
+                    </span>
+                {{- end }}
+            </div>
+            <div class="post-content">
+                {{- .Content }}
+            </div>
+        </div>
+    {{- end }}
+    
+    {{- template "pagination" $paginator }}
+</div>
+{{- end }}
+
+{{- define "pagination" }}
+{{- $paginator := . }}
+{{- if gt $paginator.TotalPages 1 }}
+<nav class="pagination">
+    {{- if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-link">← Предыдущая</a>
+    {{- end }}
+    
+    <span class="pagination-info">
+        Страница {{ $paginator.PageNumber }} из {{ $paginator.TotalPages }}
+    </span>
+    
+    {{- if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-link">Следующая →</a>
+    {{- end }}
+</nav>
+{{- end }}
+{{- end }}
