@@ -1,7 +1,7 @@
 title: rukeba.com
 description: Блог, песенник и ссылки, которые ведёт rukeba.
 #baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://rukeba.com"
+url: "https://archive.rukeba.com"
 permalink: /:categories/:slug/
 locale: ru-RU
 lang: ru-RU
@@ -10,10 +10,10 @@ future: false
 
 google_analytics: UA-1638627-8
 
-cdn_url: https://rukeba.com
+cdn_url: https://archive.rukeba.com
 
-logo: https://rukeba.com/assets/img/r.png
-  
+logo: https://archive.rukeba.com/assets/img/r.png
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
